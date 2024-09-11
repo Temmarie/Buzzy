@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useUser } from '@clerk/clerk-react';
-import './index.css';
+
 
 const Header = () => {
   const { user } = useUser();
