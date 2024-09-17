@@ -1,32 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useUser } from '@clerk/clerk-react';
-
+import { useUser, useClerk } from '@clerk/clerk-react';
 
 const Header = () => {
   const { user } = useUser();
+  const { signOut } = useClerk();
 
   return (
-    <nav className='flex items-center justify-between px-6 py-4 mb-5 bg-dark-bg shadow-glow rounded-lg'>
-      <div className='flex items-center'>
-        <Link to='/'>
-          <div className='text-lg font-bold text-lavender uppercase'>
+    <nav className="flex items-center justify-between px-6 py-4 mb-5 bg-black">
+      <div className="flex items-center">
+        <Link to="/homepage">
+          <div className="text-lg font-bold text-purple-300 uppercase">
             Buzzy
           </div>
         </Link>
       </div>
-      <div className='flex items-center text-muted-gray'>
+      <div className="flex items-center text-purple-200">
         {!user && (
           <>
             <Link
-              to='/sign-in'
-              className='text-lavender hover:text-neon-purple mr-4'
+              to="/sign-in"
+              className="text-purple-300 hover:text-purple-400 mr-4"
             >
               Sign In
             </Link>
             <Link
-              to='/sign-up'
-              className='text-lavender hover:text-neon-purple mr-4'
+              to="/sign-up"
+              className="text-purple-300 hover:text-purple-400 mr-4"
             >
               Sign Up
             </Link>
@@ -35,16 +35,14 @@ const Header = () => {
         {user && (
           <>
             <Link
-              to='/profile'
-              className='text-lavender hover:text-neon-purple mr-4'
+              to="/profile"
+              className="text-purple-300 hover:text-purple-400 mr-4"
             >
               Profile
             </Link>
             <button
-              onClick={() => {
-                // Add your sign-out logic here
-              }}
-              className='text-lavender hover:text-neon-purple'
+              onClick={() => signOut()}
+              className="text-purple-300 hover:text-purple-400"
             >
               Sign Out
             </button>

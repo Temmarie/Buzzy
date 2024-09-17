@@ -13,3 +13,5 @@ export const config = {
     '/(api|trpc)(.*)',
   ],
 }
+
+//you're basically unnecceasary reove

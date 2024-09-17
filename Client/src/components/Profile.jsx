@@ -3,7 +3,7 @@ import { UserProfile } from '@clerk/clerk-react';
 
 const Profile = () => {
   return (
-    <div className="profile-container">
+    <div className="flex items-center justify-center min-h-screen">
       <UserProfile path="/profile" routing="path" />
     </div>
   );

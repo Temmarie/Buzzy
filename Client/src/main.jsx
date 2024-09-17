@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ClerkProvider, RedirectToSignIn } from '@clerk/clerk-react'; // Import ClerkProvider and other required components
 import { dark } from '@clerk/themes'; // Import the desired Clerk theme
-import './index.css'; // Global styles
+import './index.scss'; // Global styles
 import App from './App';
 
 
@@ -27,3 +27,4 @@ root.render(
     <App />
   </ClerkProvider>
 );
+
